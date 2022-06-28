@@ -10,3 +10,12 @@ def check_val(users):
         ):
             sybil_suspects.append(user["from"])
     return sybil_suspects
+
+
+def get_unique_users(users):
+    unique_users = []
+    from_df = users[["from"]]
+    for _, user in from_df.iterrows():
+        if user["from"] not in unique_users:
+            unique_users.append(user["from"])
+    return unique_users
