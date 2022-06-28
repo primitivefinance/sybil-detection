@@ -13,8 +13,7 @@ def get_data():
     )
     a = r.json()
     df = pd.DataFrame(a["result"])
-    users = df["from"]
-    return users
+    return df.drop_duplicates()
 
 
 def get_users_nieghbors(user):

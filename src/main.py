@@ -1,9 +1,13 @@
-from get_data import get_data, get_users_nieghbors
+from get_data import get_data
+from sybil_check import check_val
+from pprint import pprint
 
 
 def main():
     users = get_data()
-    print(users.head())
+    print(len(users))
+    sybil_suspects = check_val(users)
+    pprint(len(sybil_suspects))
 
 
 if __name__ == "__main__":
