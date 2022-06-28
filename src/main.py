@@ -5,11 +5,8 @@ from pprint import pprint
 
 def main():
     users = get_data()
-    print(len(users))
     sybil_suspects = check_val(users)
     unique_users = get_unique_users(users)
-    print(len(unique_users))
-    print(len(sybil_suspects))
     print(
         "Unique Users not sybiling is {}".format(
             len(unique_users) - len(sybil_suspects)
