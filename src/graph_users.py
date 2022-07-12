@@ -13,8 +13,9 @@ def pie_plot(unique_users, sybil_suspects):
         explode=explode,
         labels=labels,
         autopct="%1.1f%%",
-        shadow=True,
+        shadow=False,
         startangle=90,
+        colors=["#369EFF", "#10B3A3"],
     )
     ax1.axis("equal")  # Equal aspect ratio ensures that pie is drawn as a circle.
 
