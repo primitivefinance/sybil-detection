@@ -5,8 +5,11 @@ from pprint import pprint
 
 
 def main():
+    # Get the user Data
     users = get_data()
+    # Get the Sybil Suspects
     sybil_suspects = check_val(users)
+    # Get the unique users
     unique_users = get_unique_users(users)
     print("Total Unique users is {}".format(len(unique_users)))
     print(
@@ -14,6 +17,7 @@ def main():
             len(unique_users) - len(sybil_suspects)
         )
     )
+    # Graph the ration of unique users and sybil suspects
     pie_plot(len(unique_users), len(sybil_suspects))
 
 

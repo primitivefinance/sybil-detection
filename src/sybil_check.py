@@ -1,7 +1,9 @@
 def check_val(users):
     sybil_suspects = []
+    # Get relevant collumns
     gas_df = users[["cumulativeGasUsed", "gasPrice", "value", "from"]]
     for _, user in gas_df.iterrows():
+        # check if gas * gasprice > value
         if (
             (int(user["cumulativeGasUsed"]) * int(user["gasPrice"]))
             >= int(user["value"])

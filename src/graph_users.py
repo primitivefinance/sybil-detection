@@ -5,8 +5,7 @@ def pie_plot(unique_users, sybil_suspects):
     unique_authentic_users = unique_users - sybil_suspects
     labels = "Sybil Suspects", "Authentic Users"
     sizes = [sybil_suspects, unique_authentic_users]
-    explode = (0.1, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
-
+    explode = (0.1, 0)  # only "explode" the 1st slice (i.e. 'Sybil Suspects')
     fig1, ax1 = plt.subplots()
     ax1.pie(
         sizes,
