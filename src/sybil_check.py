@@ -13,6 +13,16 @@ def check_val(users):
             sybil_suspects.append(user["from"])
     return sybil_suspects
 
+def check_calldata(users):
+    sybil_suspects = []
+    calldata_df = users[["input", "from"]]
+    for i, user in calldata_df.iterrows():
+        current_calldata = user["input"]
+        for j, user in calldata_df.iterrows():
+            if (current_calldata == user["input"] and i != j):
+                sybil_suspects.append(user["from"])
+    return sybil_suspects
+
 
 def get_unique_users(users):
     unique_users = []
@@ -21,3 +31,4 @@ def get_unique_users(users):
         if user["from"] not in unique_users:
             unique_users.append(user["from"])
     return unique_users
+
