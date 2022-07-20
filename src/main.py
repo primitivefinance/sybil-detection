@@ -1,5 +1,5 @@
 from get_data import get_data
-from sybil_check import check_val, get_unique_users
+from sybil_check import check_val, get_unique_users, check_calldata
 from graph_users import pie_plot
 from pprint import pprint
 
@@ -7,8 +7,7 @@ from pprint import pprint
 def main():
     # Get the user Data
     users = get_data()
-    # Get the Sybil Suspects
-    sybil_suspects = check_val(users)
+    sybil_suspects = check_calldata(users)
     # Get the unique users
     unique_users = get_unique_users(users)
     print("Total Unique users is {}".format(len(unique_users)))

@@ -14,6 +14,7 @@ def get_data():
         )
     )
     a = r.json()
+    print(a)
     df = pd.DataFrame(a["result"])
     # return results in a data fram with dropped duplicates
     return df.drop_duplicates()
